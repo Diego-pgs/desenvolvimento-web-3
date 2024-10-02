@@ -11,13 +11,12 @@
     $cliente->setTelefone($_POST['telefone']);
     $cliente->setEmail($_POST['email']);
 
-    if($cliente->create()){
+    if ($cliente->create()) {
         echo "Cliente cadastrado com sucesso!";
-        header("Refresh:3;url=form_cadastroCliente.php");
-    }else{
+        // header("Refresh:3;url=form_cadastroCliente.php");
+        header("Location: listarCliente.php");
+    } else {
         echo "Erro ao cadastrar o cliente";
     }
-
-
 
 ?>

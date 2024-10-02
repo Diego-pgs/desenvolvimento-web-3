@@ -24,7 +24,7 @@
             return $this->nome;
         }
         public function getPeso(){
-            return $this->$peso;
+            return $this->peso;
         }
         public function getAltura(){
             return $this->altura;
