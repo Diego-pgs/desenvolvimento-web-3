@@ -3,16 +3,16 @@
     require "Cliente.php";
 
     $database = new Banco();
-    $db = $database->getConexao();
+    $conexao = $database->getConexao();
 
-    $cliente = new Cliente($db);
+    $cliente = new Cliente($conexao);
     $cliente->setId($_GET['id']);
 
-if ($cliente->delete()) {
-    echo "Cliente deletado com sucesso!";
-    header("Refresh:3;url=listarCliente.php");
-} else {
-    echo "Erro ao deletar o cliente";
-}
+    if ($cliente->delete()) {
+        echo "Cliente deletado com sucesso!";
+        header("Refresh:3;url=listarCliente.php");
+    } else {
+        echo "Erro ao deletar o cliente";
+    }
 
 ?>
